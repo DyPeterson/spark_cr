@@ -17,7 +17,6 @@ A [Data Stack Academy](https://www.datastack.academy/) code review project that 
 - [Jupyter Notebooks](https://jupyter.org/)
 
 
-
 ####  Programs used:
 
 - [Visual Code Studio](https://code.visualstudio.com/)
@@ -60,7 +59,15 @@ A [Data Stack Academy](https://www.datastack.academy/) code review project that 
 [GitHub Repository](https://github.com/DyPeterson/bigquery_cr)
 
 ###  Details
+This project uses Apache Spark to load a CSV into a DataFrame and profile, clean, and query the data.
 
+The first section, Profiling the data uses `.describe` to get a summary of the Spark DataFrame. Next it uses `.printSchema()` to display the schema of the DataFrame. After that it uses `.select()` & `.show()` to select specific columns and show a specific number of rows.
+
+The second section cleans the data. The first operation being replacing all the empty genre fields with "['elevator music']". After that it changes the datatype for 'artist_popularity' & 'followers' to integers. The next operation sorts the data in descending order by the number of followers. Finally it adds a column 'popularity_percent' which simply takes the 'popularity' rating and sets it to a percent by dividing by 100.
+
+The third section queries the DataFrame. Firstly we query for all the artists that have the name that includes the work "Queen". After that we group the data by artist popularity and show the count for each group
+
+Finally it saves the new data as a parquet file.
 
 Contact me with any questions or suggestions [Here](dylan.peterson17@gmail.com)
 
